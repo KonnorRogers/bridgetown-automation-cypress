@@ -4,9 +4,20 @@
 require 'fileutils'
 require 'shellwords'
 
+# Dynamically determined due to having to load from the tempdir
 @current_dir = File.expand_path(__dir__)
-ROOT_PATH = File.expand_path(__dir__)
-DIR_NAME = 'bridgetown-plugin-tailwindcss'
+
+# If its a remote file, the branch is appended to the end, so go up a level
+# IE: https://blah-blah-blah/bridgetown-plugin-tailwindcss/master
+ROOT_PATH = if __FILE__ =~ %r{\Ahttps?://}
+              File.expand_path('../', __dir__)
+            else
+              File.expand_path(__dir__)
+            end
+
+DIR_NAME = File.basename(ROOT_PATH)
+
+# DIR_NAME = 'bridgetown-plugin-tailwindcss'
 GITHUB_PATH = "https://github.com/ParamagicDev/#{DIR_NAME}.git"
 
 def template_dir
