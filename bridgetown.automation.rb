@@ -17,15 +17,12 @@ ROOT_PATH = if __FILE__ =~ %r{\Ahttps?://}
 
 DIR_NAME = File.basename(ROOT_PATH)
 
-# DIR_NAME = 'bridgetown-plugin-tailwindcss'
 GITHUB_PATH = "https://github.com/ParamagicDev/#{DIR_NAME}.git"
 
 def template_dir
   File.join(@current_dir, 'templates')
 end
 
-# I didnt feel it was necessary here.
-# I left this here for reference.
 def require_files(tmpdir = nil)
   files = Dir.glob('lib/**/*')
 
@@ -61,43 +58,12 @@ def add_template_repository_to_source_path
 end
 
 def add_yarn_packages
-  packages = 'postcss-import postcss-loader tailwindcss'
+  packages = 'cypress'
+# https://github.com/bahmutov/start-server-and-test
 
   say "Adding the following yarn packages: #{packages}", :green
-  system("yarn add #{packages}")
-end
-
-def add_tailwind_config
-  filename = 'tailwind.config.js'
-
-  tailwind_config = File.join(template_dir, filename)
-
-  say "Creating #{filename} ...", :green
-  create_file(filename, File.read(tailwind_config))
-end
-
-def import_tailwind_statements
-  filename = 'index.scss'
-  style_file = File.join('frontend', 'styles', filename)
-  template_file = File.join(template_dir, filename)
-
-  say "Prepending to #{style_file} ...", :green
-  prepend_to_file(style_file, File.read(template_file))
-end
-
-def add_webpack_config
-  filename = 'webpack.config.js'
-
-  webpack_config = File.join(template_dir, filename)
-
-  say "Creating #{filename}", :green
-
-  force = (ENV['TAILWIND_INTEGRATION_TEST'] == 'true')
-  create_file(filename, File.read(webpack_config), force: force)
+  system("yarn add -D #{packages}")
 end
 
 add_template_repository_to_source_path
-add_tailwind_config
-add_webpack_config
-import_tailwind_statements
 add_yarn_packages
