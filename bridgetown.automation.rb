@@ -83,4 +83,5 @@ end
 
 add_template_repository_to_source_path
 add_cypress_scripts
+add_cypress_json
 add_yarn_packages

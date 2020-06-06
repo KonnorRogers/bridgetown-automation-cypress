@@ -34,7 +34,7 @@ class IntegrationTest < Minitest::Test
     cypress_scripts = 'cypress_scripts'
     template_cypress_scripts = read_template_file(cypress_scripts)
 
-    assert_includes(test_package_json, template_cypress_json)
+    assert_includes(test_package_json, template_cypress_scripts)
   end
 
   def test_it_works_with_local_automation
@@ -50,11 +50,8 @@ class IntegrationTest < Minitest::Test
   #   Rake.cd TEST_APP
   #   Rake.sh('bridgetown new . --force')
 
-  #   # Force file creation
-  #   ENV['TAILWIND_INTEGRATION_TEST'] = 'true'
-
   #   github_url = 'https://raw.githubusercontent.com'
-  #   user_and_reponame = 'ParamagicDev/bridgetown-plugin-tailwindcss/#{BRANCH}'
+  #   user_and_reponame = 'ParamagicDev/bridgetown-plugin-tailwindcss/tree/#{BRANCH}'
 
   #   file = 'bridgetown.automation.rb'
 
