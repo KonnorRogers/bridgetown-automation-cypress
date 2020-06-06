@@ -1,6 +1,4 @@
     "cy:open": "cypress open",
-    "cy:test": "start-server-and-test 'yarn start' http-get://localhost:4000 'yarn cy:open'",
-    "cy:test:https": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test 'yarn start' https-get://localhost:4000 'yarn cy:open'",
+    "cy:test": "start-server-and-test 'yarn start' http-get://localhost:4001 'yarn cy:open'",
     "cy:run": "cypress run",
-    "cy:test:ci": "start-server-and-test 'yarn start' http-get://localhost:4000 'yarn cy:run'",
-    "cy:test:ci:https": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test 'yarn start' https-get://localhost:4000 'yarn cy:run'"
+    "cy:test:ci": "start-server-and-test 'yarn start' http-get://localhost:4001 'yarn cy:run'"
