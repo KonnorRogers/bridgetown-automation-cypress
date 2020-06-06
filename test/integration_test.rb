@@ -22,36 +22,27 @@ class IntegrationTest < Minitest::Test
   end
 
   def run_assertions
-    tailwind = 'tailwind.config.js'
-    test_tailwind_file = read_test_file(tailwind)
-    template_tailwind_file = read_template_file(tailwind)
+    cypress_json = 'cypress.json'
+    test_cypress_json = read_test_file(cypress_json)
+    template_cypress_json = read_template_file(cypress_json)
 
-    assert_equal(test_tailwind_file, template_tailwind_file)
+    assert_equal(test_cypress_json, template_cypress_json)
 
-    webpack = 'webpack.config.js'
-    test_webpack_file = read_test_file(webpack)
-    template_webpack_file = read_template_file(webpack)
+    package_json = 'package.json'
+    test_package_json = read_test_file(package_json)
 
-    assert_equal(test_webpack_file, template_webpack_file)
+    cypress_scripts = 'cypress_scripts'
+    template_cypress_scripts = read_template_file(cypress_scripts)
 
-    styles = 'index.scss'
-    styles_test_path = File.join('frontend', 'styles', styles)
-
-    test_styles_file = read_test_file(styles_test_path)
-    template_styles_file = read_template_file(styles)
-
-    assert test_styles_file.include?(template_styles_file)
+    assert_includes(test_package_json, template_cypress_json)
   end
 
   def test_it_works_with_local_automation
     Rake.cd TEST_APP
 
-    # This has to overwrite `webpack.config.js` so it needs to force: true
-    # ENV['TAILWIND_INTEGRATION_TEST'] = 'true'
-
     Rake.sh("bridgetown new . --force --apply='../bridgetown.automation.rb'")
 
-    # run_assertions
+    run_assertions
   end
 
   # Have to push to github first, and wait for github to update
