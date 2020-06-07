@@ -2,15 +2,16 @@ describe("Testing that links exist in the navbar", () => {
   beforeEach(() => {
     cy.visit("/");
   });
-
   it("navbar links appear on all pages", () => {
+    const baseUrl = Cypress.config("baseUrl");
+
     cy.get('[href="/"]').click();
-    assert.equal(cy.url(), "/");
+    cy.url().should("eq", baseUrl + "/");
 
     cy.get('[href="/posts"]').click();
-    assert.equal(cy.url(), "/posts");
+    cy.url().should("eq", baseUrl + "/posts/");
 
     cy.get('[href="/about"]').click();
-    assert.equal(cy.url(), "/about");
+    cy.url().should("eq", baseUrl + "/about/");
   });
 });
