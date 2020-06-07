@@ -21,7 +21,7 @@ bridgetown new <newsite> --apply="https://github.com/ParamagicDev/bridgetown-aut
 
 ### Existing Project
 
-````bash
+```bash
 bridgetown apply https://github.com/ParamagicDev/bridgetown-automation-cypress
 ```
 
@@ -39,7 +39,7 @@ git clone https://github.com/ParamagicDev/bridgetown-automation-cypress/
 cd bridgetown-automation-cypress
 bundle install
 bundle exec rake test
-````
+```
 
 ### Testing with Docker
 
@@ -47,4 +47,8 @@ bundle exec rake test
 git clone https://github.com/ParamagicDev/bridgetown-automation-cypress
 cd bridgetown-automation-cypress
 ./compose.sh up --build
+```
+
+```
+
 ```
