@@ -36,7 +36,7 @@ Right now there is one big integration tests which simply
 checks that the files were created for Cypress in a new bridgetown project.
 
 In order for the tests to pass, you must first push the branch you're working on and then
-wait for Github you update the raw file so the remote automation test will pass
+wait for Github to update the raw file so the remote automation test will pass
 
 ```bash
 git clone https://github.com/ParamagicDev/bridgetown-automation-cypress/
