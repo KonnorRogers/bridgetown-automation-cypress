@@ -3,7 +3,7 @@
 require 'minitest'
 require 'minitest/autorun'
 require 'rake'
-require 'bridgetown-plugin-tailwindcss'
+require 'bridgetown-automation-cypress'
 
 ROOT_DIR = File.expand_path('..', __dir__)
 
