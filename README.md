@@ -52,7 +52,3 @@ git clone https://github.com/ParamagicDev/bridgetown-automation-cypress
 cd bridgetown-automation-cypress
 ./compose.sh up --build
 ```
-
-```
-
-```
