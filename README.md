@@ -25,7 +25,12 @@ bridgetown new <newsite> --apply="https://github.com/ParamagicDev/bridgetown-aut
 bridgetown apply https://github.com/ParamagicDev/bridgetown-automation-cypress
 ```
 
-## Testing
+## Adding tests
+
+Tests are located in the `cypress/` file. Checkout [Cypress](cypress.io)
+for further documentation on adding Cypress tests.
+
+## Testing automation script
 
 Right now there is one big integration tests which is run via simple:
 
