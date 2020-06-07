@@ -81,7 +81,14 @@ def add_cypress_scripts
   inject_into_file(package_json, ",\n" + cypress_scripts, after: script_regex)
 end
 
+def add_default_cypress_directory
+  cypress_dir = "cypress"
+
+  directory(File.join(determine_template_dir, cypress_dir), cypress_dir)
+end
+
 add_template_repository_to_source_path
 add_cypress_scripts
 add_cypress_json
+add_default_cypress_directory
 add_yarn_packages
