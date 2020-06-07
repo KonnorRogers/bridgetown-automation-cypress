@@ -3,7 +3,7 @@ describe("Testing that links exist in the navbar", () => {
     cy.visit("/");
   });
 
-  context("navbar links appear on all pages", () => {
+  it("navbar links appear on all pages", () => {
     cy.get('[href="/"]').click();
     assert.equal(cy.url(), "/");
 
