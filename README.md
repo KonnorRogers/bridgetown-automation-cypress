@@ -32,7 +32,7 @@ for further documentation on adding Cypress tests.
 
 ## Testing the "apply" command
 
-Right now there is one big integration tests which simply
+Right now there is one big integration test which simply
 checks that the files were created for Cypress in a new bridgetown project.
 
 In order for the tests to pass, you must first push the branch you're working on and then
