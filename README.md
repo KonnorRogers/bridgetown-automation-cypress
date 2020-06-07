@@ -25,14 +25,18 @@ bridgetown new <newsite> --apply="https://github.com/ParamagicDev/bridgetown-aut
 bridgetown apply https://github.com/ParamagicDev/bridgetown-automation-cypress
 ```
 
-## Adding tests
+## Adding tests to a Bridgetown project
 
-Tests are located in the `cypress/` file. Checkout [Cypress](cypress.io)
+Tests are located in the `cypress/integration` file. Checkout [Cypress](cypress.io)
 for further documentation on adding Cypress tests.
 
-## Testing automation script
+## Testing the "apply" command
 
-Right now there is one big integration tests which is run via simple:
+Right now there is one big integration tests which simply
+checks that the files were created for Cypress in a new bridgetown project.
+
+In order for the tests to pass, you must first push the branch you're working on and then
+wait for Github you update the raw file so the remote automation test will pass
 
 ```bash
 git clone https://github.com/ParamagicDev/bridgetown-automation-cypress/
