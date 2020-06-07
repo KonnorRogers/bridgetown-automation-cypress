@@ -1,11 +1,11 @@
 describe("Testing that links exist in the navbar", () => {
   beforeEach(() => {
-    cy.visit(baseUrl);
+    cy.visit("/");
   });
 
-  context("navbar appears on all pages", () => {
+  context("navbar links appear on all pages", () => {
     cy.get('[href="/"]').click();
-    cy.get('[href="/index"]').click();
+    cy.get('[href="/posts"]').click();
     cy.get('[href="/about"]').click();
   });
 });
