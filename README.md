@@ -30,6 +30,12 @@ bridgetown apply https://github.com/ParamagicDev/bridgetown-automation-cypress
 Tests are located in the `cypress/integration` file. Checkout [Cypress](cypress.io)
 for further documentation on adding Cypress tests.
 
+## Reference Repository
+
+A new project which applies this `automation` will look like the following repository:
+
+[https://github.com/ParamagicDev/bridgetown-example-cypress](https://github.com/ParamagicDev/bridgetown-example-cypress)
+
 ## Testing the "apply" command
 
 Right now there is one big integration test which simply
