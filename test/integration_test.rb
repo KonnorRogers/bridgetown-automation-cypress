@@ -34,7 +34,7 @@ class IntegrationTest < Minitest::Test
     cypress_scripts = 'cypress_scripts'
     template_cypress_scripts = read_template_file(cypress_scripts)
 
-    assert_includes(test_package_json, template_cypress_scripts)
+    assert(test_package_json.include?(template_cypress_scripts))
   end
 
   def test_it_works_with_local_automation
