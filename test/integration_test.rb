@@ -4,7 +4,7 @@ require 'test_helper'
 require 'bundler'
 
 CURRENT_BRIDGETOWN_VERSION = '~> 0.15.0.beta3'
-BRANCH = `git branch --show-current`.freeze
+BRANCH = `git branch --show-current`.chomp.freeze
 
 class IntegrationTest < Minitest::Test
   def setup
@@ -49,8 +49,8 @@ class IntegrationTest < Minitest::Test
     Rake.cd TEST_APP
     Rake.sh('bridgetown new . --force')
 
-    github_url = 'https://raw.githubusercontent.com'
-    user_and_reponame = "ParamagicDev/bridgetown-automation-cypress/#{BRANCH}"
+    github_url = 'https://github.com'
+    user_and_reponame = "ParamagicDev/bridgetown-automation-cypress/tree/#{BRANCH}"
 
     file = 'bridgetown.automation.rb'
 
