@@ -27,7 +27,7 @@ bridgetown apply https://github.com/ParamagicDev/bridgetown-automation-cypress
 
 ## Adding tests to a Bridgetown project
 
-Tests are located in the `cypress/integration` file. Checkout [Cypress](cypress.io)
+Tests are located in the `cypress/integration` file. Check out [Cypress](https://www.cypress.io)
 for further documentation on adding Cypress tests.
 
 ## Reference Repository
