@@ -1,3 +1,5 @@
+![build](https://github.com/ParamagicDev/bridgetown-automation-cypress/workflows/build/badge.svg)
+
 ## Prerequisites
 
 - Ruby >= 2.5
